@@ -12,7 +12,6 @@ class ScholarshipProgramPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // Scholarship Program Card
               _buildScholarshipCard(context),
             ],
           ),
