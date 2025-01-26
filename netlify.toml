@@ -1,5 +1,5 @@
 [build]
-command = "curl -sL https://storage.googleapis.com/flutter_infra/releases/stable/linux/flutter_linux_2.10.1-stable.tar.xz | tar xJf - -C /opt && export PATH=\\$PATH:/opt/flutter/bin && flutter pub get && flutter build web"
+command = "curl -sL https://storage.googleapis.com/flutter_infra/releases/stable/linux/flutter_linux_2.10.1-stable.tar | tar xf - -C /opt && export PATH=\$PATH:/opt/flutter/bin && flutter pub get && flutter build web"
 publish = "build/web"
 
 [context.production.environment]
