@@ -5,18 +5,19 @@ class ScholarshipProgramPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              _buildScholarshipCard(context),
-            ],
-          ),
+    return Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            //
+            _buildScholarshipCard(context),
+          ],
         ),
-      );
+      ),
+    );
   }
 
   // Widget to build the scholarship program card
@@ -32,7 +33,10 @@ class ScholarshipProgramPage extends StatelessWidget {
             // Title
             Text(
               'Alumni Association Scholarship Program',
-              style: Theme.of(context).textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.bold),
+              style: Theme.of(context)
+                  .textTheme
+                  .bodyLarge
+                  ?.copyWith(fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 8),
 
@@ -48,9 +52,9 @@ class ScholarshipProgramPage extends StatelessWidget {
             const SizedBox(height: 8),
             Text(
               '1. Must be an active student of the university.\n'
-                  '2. Must have a minimum GPA of 3.5.\n'
-                  '3. Must demonstrate financial need.\n'
-                  '4. Must be involved in extracurricular activities.',
+              '2. Must have a minimum GPA of 3.5.\n'
+              '3. Must demonstrate financial need.\n'
+              '4. Must be involved in extracurricular activities.',
               style: Theme.of(context).textTheme.bodyMedium,
             ),
             const SizedBox(height: 16),
@@ -60,9 +64,9 @@ class ScholarshipProgramPage extends StatelessWidget {
             const SizedBox(height: 8),
             Text(
               '1. Financial support to cover tuition fees.\n'
-                  '2. Recognition at the annual alumni event.\n'
-                  '3. Networking opportunities with alumni professionals.\n'
-                  '4. Mentorship and career development support.',
+              '2. Recognition at the annual alumni event.\n'
+              '3. Networking opportunities with alumni professionals.\n'
+              '4. Mentorship and career development support.',
               style: Theme.of(context).textTheme.bodyMedium,
             ),
             const SizedBox(height: 16),
@@ -72,9 +76,9 @@ class ScholarshipProgramPage extends StatelessWidget {
             const SizedBox(height: 8),
             Text(
               '1. Fill out the scholarship application form.\n'
-                  '2. Submit your latest academic transcript.\n'
-                  '3. Write a personal statement (500 words).\n'
-                  '4. Provide two letters of recommendation.',
+              '2. Submit your latest academic transcript.\n'
+              '3. Write a personal statement (500 words).\n'
+              '4. Provide two letters of recommendation.',
               style: Theme.of(context).textTheme.bodyMedium,
             ),
             const SizedBox(height: 16),
@@ -93,9 +97,9 @@ class ScholarshipProgramPage extends StatelessWidget {
             const SizedBox(height: 8),
             Text(
               'For more information or inquiries, please contact the Scholarship Committee:\n\n'
-                  'Email: scholarship@alumni.org\n'
-                  'Phone: (123) 456-7890\n'
-                  'Address: 123 Alumni Street, University Campus, City',
+              'Email: scholarship@alumni.org\n'
+              'Phone: (123) 456-7890\n'
+              'Address: 123 Alumni Street, University Campus, City',
               style: Theme.of(context).textTheme.titleMedium,
             ),
             const SizedBox(height: 16),
@@ -118,7 +122,10 @@ class ScholarshipProgramPage extends StatelessWidget {
   Widget _buildSectionTitle(BuildContext context, String title) {
     return Text(
       title,
-      style: Theme.of(context).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
+      style: Theme.of(context)
+          .textTheme
+          .titleMedium
+          ?.copyWith(fontWeight: FontWeight.bold),
     );
   }
 }

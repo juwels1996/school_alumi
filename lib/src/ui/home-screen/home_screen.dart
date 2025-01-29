@@ -75,28 +75,28 @@ class _SchoolProfilePageState extends State<SchoolProfilePage> {
               Expanded(
                 child: TabBarView(
                   children: [
-                    // Example content for tab 1
                     Center(
                         child:
                             HomeScreenInformation()), // Example content for tab 2
-                    // Example content for tab 3
+
                     Center(child: NoticeScreen()),
                     Center(child: ImageGalleryPage()),
                     Container(
                       color: Colors.black26,
                       child: ListView.builder(
                         padding: const EdgeInsets.all(16),
-                        itemCount: (_controller.users.length / itemsPerRow).ceil(), // Number of rows
+                        itemCount: (_controller.users.length / itemsPerRow)
+                            .ceil(), // Number of rows
                         itemBuilder: (context, rowIndex) {
-
                           int startIndex = rowIndex * itemsPerRow;
                           int endIndex = (rowIndex + 1) * itemsPerRow;
-
 
                           // Create a list of users for this row
                           List<dynamic> rowUsers = _controller.users.sublist(
                             startIndex,
-                            endIndex > _controller.users.length ? _controller.users.length : endIndex,
+                            endIndex > _controller.users.length
+                                ? _controller.users.length
+                                : endIndex,
                           );
 
                           return Padding(
@@ -106,9 +106,13 @@ class _SchoolProfilePageState extends State<SchoolProfilePage> {
                               children: List.generate(rowUsers.length, (index) {
                                 final user = rowUsers[index];
                                 return Padding(
-                                  padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 4.0),
                                   child: Container(
-                                    width: (screenWidth - 32 - (itemsPerRow - 1) * 16) / itemsPerRow, // Ensure width is same for each card
+                                    width: (screenWidth -
+                                            32 -
+                                            (itemsPerRow - 1) * 16) /
+                                        itemsPerRow, // Ensure width is same for each card
                                     child: UserCard(
                                       user: user,
                                       onEdit: (updatedUser) {
@@ -124,9 +128,8 @@ class _SchoolProfilePageState extends State<SchoolProfilePage> {
                       ),
                     ),
 
-
                     Center(child: AboutUsPage()),
-                    Center(child: ContactUsPage()),// Example content for tab 4
+                    Center(child: ContactUsPage()), // Example content for tab 4
                   ],
                 ),
               ),
