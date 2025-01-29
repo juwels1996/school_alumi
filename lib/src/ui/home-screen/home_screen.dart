@@ -49,7 +49,7 @@ class _SchoolProfilePageState extends State<SchoolProfilePage> {
           centerTitle: false,
 
           // backgroundColor: Colors.blueAccent.shade400,
-          title: Text("কুমিল্লা বুদ্ধিস্ট মহাবিহার স্কুল এন্ড কলেজ"),
+          title: Text("DMHS স্কুল এন্ড কলেজ"),
           bottom: PreferredSize(
             preferredSize: Size.fromHeight(kToolbarHeight),
             child: Container(
