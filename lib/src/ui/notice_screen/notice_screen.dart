@@ -6,9 +6,16 @@ class NoticeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.lightBlue.shade400,
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        title: const Text('Notices'),
+        backgroundColor: Colors.lightBlue.shade400,
+        title: const Text(
+          'Notices',
+          style: TextStyle(
+            fontSize: 20,
+            color: Colors.white,
+          ),
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),

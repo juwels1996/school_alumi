@@ -20,9 +20,14 @@ class ImageGalleryPage extends StatelessWidget {
     ];
 
     return Scaffold(
+      backgroundColor: Colors.brown,
       appBar: AppBar(
-        title: const Text('Gallery'),
-
+        backgroundColor: Colors.brown,
+        title: const Text('Gallery',
+            style: TextStyle(
+              fontSize: 20,
+              color: Colors.white,
+            )),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -36,10 +41,12 @@ class ImageGalleryPage extends StatelessWidget {
           itemCount: images.length,
           itemBuilder: (context, index) {
             return ClipRRect(
-              borderRadius: BorderRadius.circular(8.0), // Rounded corners for images
+              borderRadius:
+                  BorderRadius.circular(8.0), // Rounded corners for images
               child: Image.network(
                 images[index], // Replace with your image URLs
-                fit: BoxFit.cover, // Ensures the image covers the available space
+                fit: BoxFit
+                    .cover, // Ensures the image covers the available space
               ),
             );
           },

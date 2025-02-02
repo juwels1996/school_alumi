@@ -15,9 +15,15 @@ class HomeScreenInformation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: SingleChildScrollView(
+      body: SingleChildScrollView(
+        child: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [Colors.cyan, Colors.blueGrey],
+            ),
+          ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -107,10 +113,8 @@ class HomeScreenInformation extends StatelessWidget {
               // News Section
               Text(
                 'The Day to Day Activities of Dhaka University Alumni Association',
-                style: Theme.of(context)
-                    .textTheme
-                    .bodyMedium
-                    ?.copyWith(fontWeight: FontWeight.bold),
+                style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                    color: Colors.white, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 8),
 
@@ -128,7 +132,7 @@ class HomeScreenInformation extends StatelessWidget {
 
               Text("Convenning Comitte Members",
                   style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                        color: Colors.black,
+                        color: Colors.white,
                         fontSize: 22,
                         fontWeight: FontWeight.bold,
                       )),
@@ -138,7 +142,7 @@ class HomeScreenInformation extends StatelessWidget {
                 child: Text(
                     " convenning commite means where all the person are convenning commite means where all convenning commite means where all the person areconvenning commite means where all the person areconvenning commite means where all the person are the person are convenning commite means where all the person are planning and established the high level mind game eans where all the person are planning and established the high level mind game eans where all the person are planning and established the high level mind game",
                     style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                          color: Colors.black,
+                          color: Colors.white,
                           fontWeight: FontWeight.w300,
                         )),
               ),
@@ -148,10 +152,8 @@ class HomeScreenInformation extends StatelessWidget {
               SizedBox(height: 16),
               Text(
                 'Frequently Asked Questions',
-                style: Theme.of(context)
-                    .textTheme
-                    .titleMedium
-                    ?.copyWith(fontWeight: FontWeight.bold),
+                style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                    color: Colors.white, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 8),
               _buildFAQTile(context, 'How Do I Apply For Membership?',
@@ -285,11 +287,11 @@ class HomeScreenInformation extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'News Title', // Replace with actual news title
+                      'Event News', // Replace with actual news title
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
                           color: Colors.white, fontWeight: FontWeight.bold),
                     ),
-                    const SizedBox(height: 8),
+                    const SizedBox(height: 3),
                     Text(
                       'প্রধান উপদেষ্টা অধ্যাপক মুহাম্মদ ইউনূস বলেছেন, ছাত্র–জনতার অভ্যুত্থানে ক্ষমতাচ্যুত শেখ হাসিনা সরকারের সময় দেশের অর্থনীতির উচ্চ প্রবৃদ্ধি নিয়ে যা বলা হতো, তা ছিল ‘জালিয়াতি’। শেখ হাসিনা দাবি করেছিলেন প্রবৃদ্ধিতে সবাইকে ছাড়িয়ে গেছে বাংলাদেশ। হাসিনা সরকারের দুর্নীতি নিয়ে প্রশ্ন না তোলায় আন্তর্জাতিক সম্প্রদায়ের ভূমিকা নিয়েও সমালোচনা করেন তিনি।বৃহস্পতিবার বার্তা সংস্থা রয়টার্সকে দেওয়া সাক্ষাৎকারে অধ্যাপক ইউনূস এসব কথা বলেন। একই সাক্ষাৎকারে তিনি বলেন, নির্বাচনে প্রতিদ্বন্দ্বিতা করার কোনো আগ্রহ তাঁর নেই।Brief description of the news goes here. This could be a short preview or an intro to the full article.',
                       style: Theme.of(context).textTheme.titleSmall!.copyWith(
@@ -353,16 +355,18 @@ class HomeScreenInformation extends StatelessWidget {
     return ExpansionTile(
       title: Text(
         title,
-        style: Theme.of(context)
-            .textTheme
-            .bodyLarge
-            ?.copyWith(fontWeight: FontWeight.bold),
+        style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+            ),
       ),
       children: [
         Padding(
           padding: const EdgeInsets.all(8.0),
-          child:
-              Text(description, style: Theme.of(context).textTheme.bodyMedium),
+          child: Text(description,
+              style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                    color: Colors.white,
+                  )),
         ),
       ],
     );

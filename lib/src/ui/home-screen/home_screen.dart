@@ -43,7 +43,7 @@ class _SchoolProfilePageState extends State<SchoolProfilePage> {
     return DefaultTabController(
       length: 6, // Number of tabs
       child: Scaffold(
-        backgroundColor: Colors.grey,
+        backgroundColor: Colors.black,
 
         appBar: AppBar(
           centerTitle: false,
@@ -51,7 +51,7 @@ class _SchoolProfilePageState extends State<SchoolProfilePage> {
           // backgroundColor: Colors.blueAccent.shade400,
           title: Row(
             children: [
-              IconButton(onPressed: () {}, icon: Icon(Icons.school)),
+              Image.asset("assets/images/logo-dmhs.png", height: 40.h),
               Text("DMHS Alumni Association",
                   style: TextStyle(
                       fontSize: 20.sp,
@@ -91,7 +91,13 @@ class _SchoolProfilePageState extends State<SchoolProfilePage> {
                     Center(child: NoticeScreen()),
                     Center(child: ImageGalleryPage()),
                     Container(
-                      color: Colors.black26,
+                      decoration: const BoxDecoration(
+                        gradient: LinearGradient(
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter,
+                          colors: [Colors.blueAccent, Colors.orangeAccent],
+                        ),
+                      ),
                       child: ListView.builder(
                         padding: const EdgeInsets.all(16),
                         itemCount: (_controller.users.length / itemsPerRow)

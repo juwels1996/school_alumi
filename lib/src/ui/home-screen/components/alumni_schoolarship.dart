@@ -28,7 +28,7 @@ class ScholarshipProgramPage extends StatelessWidget {
       child: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
-            colors: [Colors.teal, Colors.blue],
+            colors: [Colors.teal, Colors.deepPurpleAccent],
             begin: Alignment.bottomLeft,
           ),
         ),
@@ -40,17 +40,17 @@ class ScholarshipProgramPage extends StatelessWidget {
               // Title
               Text(
                 'Alumni Association Scholarship Program',
-                style: Theme.of(context)
-                    .textTheme
-                    .bodyLarge
-                    ?.copyWith(fontWeight: FontWeight.bold),
+                style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                    fontWeight: FontWeight.bold, color: Colors.white),
               ),
               const SizedBox(height: 8),
 
               // Description
               Text(
                 'The Alumni Association offers a scholarship program to support current students in need of financial assistance. Our goal is to empower deserving students to continue their studies and contribute to the community.',
-                style: Theme.of(context).textTheme.bodyMedium,
+                style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                      color: Colors.white,
+                    ),
               ),
               const SizedBox(height: 16),
 
@@ -62,7 +62,9 @@ class ScholarshipProgramPage extends StatelessWidget {
                 '2. Must have a minimum GPA of 3.5.\n'
                 '3. Must demonstrate financial need.\n'
                 '4. Must be involved in extracurricular activities.',
-                style: Theme.of(context).textTheme.bodyMedium,
+                style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                      color: Colors.white,
+                    ),
               ),
               const SizedBox(height: 16),
 
@@ -74,7 +76,9 @@ class ScholarshipProgramPage extends StatelessWidget {
                 '2. Recognition at the annual alumni event.\n'
                 '3. Networking opportunities with alumni professionals.\n'
                 '4. Mentorship and career development support.',
-                style: Theme.of(context).textTheme.bodyMedium,
+                style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                      color: Colors.white,
+                    ),
               ),
               const SizedBox(height: 16),
 
@@ -86,7 +90,9 @@ class ScholarshipProgramPage extends StatelessWidget {
                 '2. Submit your latest academic transcript.\n'
                 '3. Write a personal statement (500 words).\n'
                 '4. Provide two letters of recommendation.',
-                style: Theme.of(context).textTheme.bodyMedium,
+                style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                      color: Colors.white,
+                    ),
               ),
               const SizedBox(height: 16),
 
@@ -95,7 +101,9 @@ class ScholarshipProgramPage extends StatelessWidget {
               const SizedBox(height: 8),
               Text(
                 'The deadline for applications is December 31st, 2025. Late applications will not be accepted.',
-                style: Theme.of(context).textTheme.bodyMedium,
+                style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                      color: Colors.white,
+                    ),
               ),
               const SizedBox(height: 16),
 
@@ -107,7 +115,9 @@ class ScholarshipProgramPage extends StatelessWidget {
                 'Email: scholarship@alumni.org\n'
                 'Phone: (123) 456-7890\n'
                 'Address: 123 Alumni Street, University Campus, City',
-                style: Theme.of(context).textTheme.titleMedium,
+                style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                      color: Colors.white,
+                    ),
               ),
               const SizedBox(height: 16),
 
@@ -133,7 +143,7 @@ class ScholarshipProgramPage extends StatelessWidget {
       style: Theme.of(context)
           .textTheme
           .titleMedium
-          ?.copyWith(fontWeight: FontWeight.bold),
+          ?.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
     );
   }
 }
