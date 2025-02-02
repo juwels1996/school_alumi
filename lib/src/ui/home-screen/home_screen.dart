@@ -49,7 +49,12 @@ class _SchoolProfilePageState extends State<SchoolProfilePage> {
           centerTitle: false,
 
           // backgroundColor: Colors.blueAccent.shade400,
-          title: Text("DMHS স্কুল এন্ড কলেজ"),
+          title: Text("DMHS স্কুল প্রোফাইল",
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20.sp,
+                  fontStyle: FontStyle.italic,
+                  fontWeight: FontWeight.bold)),
           bottom: PreferredSize(
             preferredSize: Size.fromHeight(kToolbarHeight),
             child: Container(
