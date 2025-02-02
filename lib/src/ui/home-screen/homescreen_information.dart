@@ -188,50 +188,58 @@ class HomeScreenInformation extends StatelessWidget {
     required String description,
     required BuildContext context,
   }) {
-    return Card(
-      elevation: 4,
-      color: color,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-      child: Container(
-        width: MediaQuery.of(context).size.width * 0.3,
-        height: MediaQuery.of(context).size.height * 0.3,
-        decoration: BoxDecoration(
-          color: color,
-          borderRadius: BorderRadius.circular(12),
-        ),
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                title,
-                style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                    color: Colors.white, fontWeight: FontWeight.bold),
-              ),
-              const SizedBox(height: 8),
-              Text(
-                description,
-                style: Theme.of(context)
-                    .textTheme
-                    .bodyMedium
-                    ?.copyWith(color: Colors.white),
-                maxLines: 5,
-              ),
-              const SizedBox(height: 8),
-              TextButton(
-                onPressed: () {
-                  // Add navigation or additional logic here
-                },
-                child: Text(
-                  'Details>>',
+    return AnimatedContainer(
+      duration: Duration(milliseconds: 800),
+      curve: Curves.easeInOut,
+      child: Card(
+        elevation: 4,
+        color: color,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+        child: Container(
+          width: MediaQuery.of(context).size.width * 0.3,
+          height: MediaQuery.of(context).size.height * 0.3,
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [Colors.purple, Colors.blue],
+              begin: Alignment.bottomLeft,
+              end: Alignment.topRight,
+            ),
+            borderRadius: BorderRadius.circular(12),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  title,
+                  style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                      color: Colors.white, fontWeight: FontWeight.bold),
+                ),
+                const SizedBox(height: 8),
+                Text(
+                  description,
                   style: Theme.of(context)
                       .textTheme
                       .bodyMedium
                       ?.copyWith(color: Colors.white),
+                  maxLines: 5,
                 ),
-              ),
-            ],
+                const SizedBox(height: 8),
+                TextButton(
+                  onPressed: () {
+                    // Add navigation or additional logic here
+                  },
+                  child: Text(
+                    'Details>>',
+                    style: Theme.of(context)
+                        .textTheme
+                        .bodyMedium
+                        ?.copyWith(color: Colors.white),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
@@ -246,6 +254,14 @@ class HomeScreenInformation extends StatelessWidget {
       child: Container(
         height: MediaQuery.of(context).size.height * 0.25,
         width: MediaQuery.of(context).size.width * 0.25,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(12),
+          gradient: LinearGradient(
+            colors: [Colors.brown, Colors.blue],
+            begin: Alignment.bottomLeft,
+            end: Alignment.topRight,
+          ),
+        ),
         child: Padding(
           padding: const EdgeInsets.all(5.0),
           child: Row(
@@ -270,16 +286,15 @@ class HomeScreenInformation extends StatelessWidget {
                   children: [
                     Text(
                       'News Title', // Replace with actual news title
-                      style: Theme.of(context)
-                          .textTheme
-                          .titleMedium
-                          ?.copyWith(fontWeight: FontWeight.bold),
+                      style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                          color: Colors.white, fontWeight: FontWeight.bold),
                     ),
                     const SizedBox(height: 8),
                     Text(
                       'প্রধান উপদেষ্টা অধ্যাপক মুহাম্মদ ইউনূস বলেছেন, ছাত্র–জনতার অভ্যুত্থানে ক্ষমতাচ্যুত শেখ হাসিনা সরকারের সময় দেশের অর্থনীতির উচ্চ প্রবৃদ্ধি নিয়ে যা বলা হতো, তা ছিল ‘জালিয়াতি’। শেখ হাসিনা দাবি করেছিলেন প্রবৃদ্ধিতে সবাইকে ছাড়িয়ে গেছে বাংলাদেশ। হাসিনা সরকারের দুর্নীতি নিয়ে প্রশ্ন না তোলায় আন্তর্জাতিক সম্প্রদায়ের ভূমিকা নিয়েও সমালোচনা করেন তিনি।বৃহস্পতিবার বার্তা সংস্থা রয়টার্সকে দেওয়া সাক্ষাৎকারে অধ্যাপক ইউনূস এসব কথা বলেন। একই সাক্ষাৎকারে তিনি বলেন, নির্বাচনে প্রতিদ্বন্দ্বিতা করার কোনো আগ্রহ তাঁর নেই।Brief description of the news goes here. This could be a short preview or an intro to the full article.',
                       style: Theme.of(context).textTheme.titleSmall!.copyWith(
                             fontSize: 12,
+                            color: Colors.white,
                           ),
                       maxLines: 6,
                     ),
@@ -361,7 +376,7 @@ class HomeScreenInformation extends StatelessWidget {
       child: Column(
         children: [
           const Text(
-            '©2024 Dhaka University Alumni Association',
+            '©2024 DMHS Alumni Association',
             style: TextStyle(color: Colors.white),
           ),
           const SizedBox(height: 8),

@@ -7,7 +7,6 @@ class ContactUsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-
         title: const Text('Contact Us'),
       ),
       body: Padding(
@@ -15,7 +14,9 @@ class ContactUsPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            SizedBox(height: 40,),
+            SizedBox(
+              height: 40,
+            ),
             // Contact Us Header
 
             const SizedBox(height: 8),
@@ -40,7 +41,6 @@ class ContactUsPage extends StatelessWidget {
                 Text(
                   'Alumni Floor, Nabab Nawab Ali Chowdhury Senate Bhavan, University of Dhaka. Dhaka - 1000.',
                   style: TextStyle(fontSize: 14),
-
                 ),
               ],
             ),
@@ -112,7 +112,7 @@ class ContactUsPage extends StatelessWidget {
                 Icon(Icons.link, color: Colors.blue),
                 SizedBox(width: 8),
                 Text(
-                  'www.duaa-bd.org',
+                  'www.dmhs.com',
                   style: TextStyle(fontSize: 14),
                 ),
               ],

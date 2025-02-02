@@ -63,21 +63,28 @@ class UserCard extends StatelessWidget {
       color: Colors.blue.shade100,
       margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 2),
       child: Container(
-        height: 180,
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            colors: [Colors.yellow, Colors.blueAccent],
+            begin: Alignment.bottomLeft,
+            end: Alignment.topRight,
+          ),
+        ),
+        height: 200,
         child: Column(
-          spacing: 4,
+          spacing: 2,
           children: [
-
+            SizedBox(
+              height: 5,
+            ),
             CircleAvatar(
-              radius: 35,
+              radius: 45,
               backgroundImage: user.profileImage != null
                   ? NetworkImage(user.profileImage!)
                   : null,
-              child: user.profileImage == null
-                  ? const Icon(Icons.person)
-                  : null,
+              child:
+                  user.profileImage == null ? const Icon(Icons.person) : null,
             ),
-
             Text(
               user.username ?? "",
               style: TextStyle(
@@ -121,5 +128,3 @@ class UserCard extends StatelessWidget {
     );
   }
 }
-
-

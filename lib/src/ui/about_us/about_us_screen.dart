@@ -19,7 +19,10 @@ class AboutUsPage extends StatelessWidget {
               // Introduction
               Text(
                 'Welcome to the Alumni Association',
-                style: Theme.of(context).textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.bold),
+                style: Theme.of(context)
+                    .textTheme
+                    .bodyLarge
+                    ?.copyWith(fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 8),
               Text(
@@ -31,7 +34,10 @@ class AboutUsPage extends StatelessWidget {
               // History Section
               Text(
                 'Our History',
-                style: Theme.of(context).textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.bold),
+                style: Theme.of(context)
+                    .textTheme
+                    .bodyLarge
+                    ?.copyWith(fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 8),
               Text(
@@ -43,7 +49,10 @@ class AboutUsPage extends StatelessWidget {
               // Mission Section
               Text(
                 'Our Mission',
-                style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
+                style: Theme.of(context)
+                    .textTheme
+                    .titleLarge
+                    ?.copyWith(fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 8),
               Text(
@@ -55,46 +64,25 @@ class AboutUsPage extends StatelessWidget {
               // Objectives Section
               Text(
                 'Our Objectives',
-                style: Theme.of(context).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
+                style: Theme.of(context)
+                    .textTheme
+                    .titleMedium
+                    ?.copyWith(fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 8),
               Text(
                 '1. Establish and maintain an active alumni network.\n'
-                    '2. Support the institution by providing scholarships and grants.\n'
-                    '3. Organize alumni events and reunions.\n'
-                    '4. Foster career development and mentorship programs.\n'
-                    '5. Advocate for the institution and its current students.\n',
-                style: Theme.of(context).textTheme.titleSmall?.copyWith(fontWeight: FontWeight.bold,),
+                '2. Support the institution by providing scholarships and grants.\n'
+                '3. Organize alumni events and reunions.\n'
+                '4. Foster career development and mentorship programs.\n'
+                '5. Advocate for the institution and its current students.\n',
+                style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                      fontWeight: FontWeight.bold,
+                    ),
               ),
               const SizedBox(height: 16),
 
               // Contact Information Section
-              Text(
-                'Contact Us',
-                style: Theme.of(context).textTheme.titleLarge,
-              ),
-              const SizedBox(height: 8),
-              Text(
-                'For more information, or if you want to get involved with the alumni association, please contact us at:\n\n'
-                    'Email: alumni@example.com\n'
-                    'Phone: (123) 456-7890\n'
-                    'Address: 123 Alumni Rd, School Campus, City, State',
-                style: Theme.of(context).textTheme.titleLarge,
-              ),
-              const SizedBox(height: 16),
-
-              // Upcoming Events Section
-              Text(
-                'Upcoming Events',
-                style: Theme.of(context).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
-              ),
-              const SizedBox(height: 8),
-              Text(
-                '1. Annual Alumni Reunion - Dec 2023\n'
-                    '2. Career Development Workshop - Jan 2024\n'
-                    '3. Community Volunteering Program - Feb 2024\n',
-                style: Theme.of(context).textTheme.titleLarge,
-              ),
             ],
           ),
         ),
