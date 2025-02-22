@@ -51,7 +51,7 @@ class ContactUsPage extends StatelessWidget {
                     TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 8),
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: const [
@@ -60,9 +60,11 @@ class ContactUsPage extends StatelessWidget {
                     color: Colors.blue,
                   ),
                   SizedBox(width: 8),
-                  Text(
-                    'Alumni Floor, Nabab Nawab Ali Chowdhury Senate Bhavan, University of Dhaka. Dhaka - 1000.',
-                    style: TextStyle(fontSize: 14, color: Colors.white),
+                  Flexible(
+                    child: Text(
+                      'Deedar Model High School, Balarmapur, Halima Nagar (3502), Adarsha Sadar, Cumilla.',
+                      style: TextStyle(fontSize: 14, color: Colors.white),
+                    ),
                   ),
                 ],
               ),
@@ -83,7 +85,7 @@ class ContactUsPage extends StatelessWidget {
                   Icon(Icons.phone, color: Colors.blue),
                   SizedBox(width: 8),
                   Text(
-                    '02-55167807',
+                    '01685-827837',
                     style: TextStyle(fontSize: 14, color: Colors.white),
                   ),
                 ],
@@ -96,33 +98,46 @@ class ContactUsPage extends StatelessWidget {
                   Icon(Icons.phone, color: Colors.blue),
                   SizedBox(width: 8),
                   Text(
-                    '01306411630',
+                    '01812-464540',
                     style: TextStyle(fontSize: 14, color: Colors.white),
-                  )
+                  ),
                 ],
-              ),
-              const SizedBox(height: 16),
-
-              // Email Section
-              const Text(
-                'EMAIL',
-                style:
-                    TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
               ),
               const SizedBox(height: 8),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: const [
-                  Icon(Icons.mail, color: Colors.blue),
+                  Icon(Icons.phone, color: Colors.blue),
                   SizedBox(width: 8),
                   Text(
-                    'info@duaa-bd.org',
+                    '01319-080638',
                     style: TextStyle(fontSize: 14, color: Colors.white),
                   ),
                 ],
               ),
               const SizedBox(height: 16),
+
+              // Email Section
+              // const Text(
+              //   'EMAIL',
+              //   style:
+              //       TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
+              // ),
+              // const SizedBox(height: 8),
+              // Row(
+              //   mainAxisAlignment: MainAxisAlignment.center,
+              //   crossAxisAlignment: CrossAxisAlignment.center,
+              //   children: const [
+              //     Icon(Icons.mail, color: Colors.blue),
+              //     SizedBox(width: 8),
+              //     Text(
+              //       'info@duaa-bd.org',
+              //       style: TextStyle(fontSize: 14, color: Colors.white),
+              //     ),
+              //   ],
+              // ),
+              // const SizedBox(height: 16),
 
               // Website Section
               const Text(
@@ -138,7 +153,7 @@ class ContactUsPage extends StatelessWidget {
                   Icon(Icons.link, color: Colors.blue),
                   SizedBox(width: 8),
                   Text(
-                    'www.dmhs.com',
+                    'www.dmhsaa.com',
                     style: TextStyle(fontSize: 14, color: Colors.white),
                   ),
                 ],

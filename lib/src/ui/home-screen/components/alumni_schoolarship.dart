@@ -112,9 +112,9 @@ class ScholarshipProgramPage extends StatelessWidget {
               const SizedBox(height: 8),
               Text(
                 'For more information or inquiries, please contact the Scholarship Committee:\n\n'
-                'Email: scholarship@alumni.org\n'
-                'Phone: (123) 456-7890\n'
-                'Address: 123 Alumni Street, University Campus, City',
+                // 'Email: scholarship@alumni.org\n'
+                'Phone: 01685-827837\n'
+                'Address: Deedar Model High School, Balarmapur, Halima Nagar (3502), Adarsha Sadar, Cumilla.',
                 style: Theme.of(context).textTheme.titleMedium!.copyWith(
                       color: Colors.white,
                     ),

@@ -35,18 +35,16 @@ class NoticeScreen extends StatelessWidget {
 
               // Notice 1
               NoticeCard(
-                imageUrl:
-                    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_-F-ENM0ycDdoAoHJWnaicIlEnde0zQcATkF2ZeYZ2nfc0jxr_n_PL4_MyO081mc1RUk&usqp=CAU', // Placeholder image
-                title: 'Alumni Reunion 2023',
+                imageUrl: 'assets/images/photo1.jpg', // Placeholder image
+                title: 'Alumni Reunion 2024',
                 description:
-                    'We are excited to announce the upcoming Alumni Reunion event for 2023. Please join us for an unforgettable day of connection and celebration!',
+                    'We are excited to announce the upcoming Alumni Reunion event for 2024. Please join us for an unforgettable day of connection and celebration!',
               ),
               const SizedBox(height: 16),
 
               // Notice 2
               NoticeCard(
-                imageUrl:
-                    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScRbbKgG_h1fq00asj7Mkol0uKkQhHjL42n8-INs7-Bvxvp3DpSts_UHaqZ4K1O6TDrtM&usqp=CAU', // Placeholder image
+                imageUrl: 'assets/images/photo2.jpg', // Placeholder image
                 title: 'Annual Charity Event',
                 description:
                     'Join us for our Annual Charity Event where we help fundraise for current students and support local causes. Your participation matters!',
@@ -55,8 +53,7 @@ class NoticeScreen extends StatelessWidget {
 
               // Notice 3
               NoticeCard(
-                imageUrl:
-                    'https://pbs.twimg.com/media/C8OKJHPUwAA5sEo.jpg', // Placeholder image
+                imageUrl: 'assets/images/photo3.jpg',
                 title: 'New Scholarships Available',
                 description:
                     'We are thrilled to announce new scholarships for current students. Apply today to benefit from these opportunities!',
@@ -103,7 +100,7 @@ class NoticeCard extends StatelessWidget {
               // Image
               ClipRRect(
                 borderRadius: BorderRadius.circular(8),
-                child: Image.network(
+                child: Image.asset(
                   imageUrl,
                   width: 100,
                   height: 100,

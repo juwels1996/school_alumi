@@ -7,15 +7,10 @@ class ImageGalleryPage extends StatelessWidget {
   Widget build(BuildContext context) {
     // Sample image URLs
     List<String> images = [
-      'https://media.istockphoto.com/id/530685719/photo/group-of-business-people-standing-in-hall-smiling-and-talking-together.jpg?s=612x612&w=0&k=20&c=jX61UCaRLlN_jm-prBgTqLh6SZkptzlJocO3QDQu3k4=',
-      'https://thumbs.dreamstime.com/b/delegates-networking-conference-drinks-reception-79847575.jpg',
-      'https://media.istockphoto.com/id/513439341/photo/portrait-of-enthusiastic-business-people-in-circle.jpg?s=612x612&w=0&k=20&c=oxwsq8WGFT0ixmSojntYBEZqifne4P7DlqOWbXCqWUk=',
-      'https://media.istockphoto.com/id/513439341/photo/portrait-of-enthusiastic-business-people-in-circle.jpg?s=612x612&w=0&k=20&c=oxwsq8WGFT0ixmSojntYBEZqifne4P7DlqOWbXCqWUk=',
-      'https://media.istockphoto.com/id/513439341/photo/portrait-of-enthusiastic-business-people-in-circle.jpg?s=612x612&w=0&k=20&c=oxwsq8WGFT0ixmSojntYBEZqifne4P7DlqOWbXCqWUk=',
-      'https://media.istockphoto.com/id/513439341/photo/portrait-of-enthusiastic-business-people-in-circle.jpg?s=612x612&w=0&k=20&c=oxwsq8WGFT0ixmSojntYBEZqifne4P7DlqOWbXCqWUk=',
-      'https://media.istockphoto.com/id/513439341/photo/portrait-of-enthusiastic-business-people-in-circle.jpg?s=612x612&w=0&k=20&c=oxwsq8WGFT0ixmSojntYBEZqifne4P7DlqOWbXCqWUk=',
-      'https://media.istockphoto.com/id/513439341/photo/portrait-of-enthusiastic-business-people-in-circle.jpg?s=612x612&w=0&k=20&c=oxwsq8WGFT0ixmSojntYBEZqifne4P7DlqOWbXCqWUk=',
-      'https://media.istockphoto.com/id/513439341/photo/portrait-of-enthusiastic-business-people-in-circle.jpg?s=612x612&w=0&k=20&c=oxwsq8WGFT0ixmSojntYBEZqifne4P7DlqOWbXCqWUk=',
+      'assets/images/photo1.jpg',
+      'assets/images/photo2.jpg',
+      'assets/images/photo3.jpg',
+      'assets/images/photo5.jpg',
       // Add more image URLs here
     ];
 
@@ -43,7 +38,7 @@ class ImageGalleryPage extends StatelessWidget {
             return ClipRRect(
               borderRadius:
                   BorderRadius.circular(8.0), // Rounded corners for images
-              child: Image.network(
+              child: Image.asset(
                 images[index], // Replace with your image URLs
                 fit: BoxFit
                     .cover, // Ensures the image covers the available space

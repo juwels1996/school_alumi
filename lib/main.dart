@@ -2,10 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:testing_purpose/src/configuration/dio_config.dart';
 import 'package:testing_purpose/src/ui/home-screen/home_screen.dart';
 
-
-
-
-
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   DioConfig().initialize();
@@ -18,6 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'School Profile',
       theme: ThemeData(
         primarySwatch: Colors.blue,
@@ -26,5 +23,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-

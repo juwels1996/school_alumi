@@ -6,78 +6,20 @@ class MyCustomTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TabBar(
-      labelColor: Colors.red, // Selected tab text color
-      unselectedLabelColor: Colors.white, // Unselected tab text color
+      isScrollable: true, // Allow tabs to take only the required space
+      labelColor: Colors.red,
+      unselectedLabelColor: Colors.white,
       indicator: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
       ),
       dividerColor: Colors.black,
-      // Tabs to be displayed
       tabs: const [
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 15.0),
-          child: Tab(
-            child: Text(
-              "Home",
-              style: TextStyle(
-                fontSize: 17,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
-        ),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 15.0),
-          child: Tab(
-            child: Text(
-              "Notice",
-              style: TextStyle(
-                fontSize: 17,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
-        ),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 15.0),
-          child: Text(
-            "Gallery",
-            style: TextStyle(
-              fontSize: 17,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 15.0),
-          child: Text(
-            "Our Member",
-            style: TextStyle(
-              fontSize: 17,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 15.0),
-          child: Text(
-            "About Us",
-            style: TextStyle(
-              fontSize: 17,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 15.0),
-          child: Text(
-            "Contact Us",
-            style: TextStyle(
-              fontSize: 17,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ),
+        Tab(text: "Home"),
+        Tab(text: "Notice"),
+        Tab(text: "Gallery"),
+        Tab(text: "Our Member"),
+        Tab(text: "About Us"),
+        Tab(text: "Contact Us"),
       ],
     );
   }

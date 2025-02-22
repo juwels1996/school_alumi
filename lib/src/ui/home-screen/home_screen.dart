@@ -31,9 +31,8 @@ class _SchoolProfilePageState extends State<SchoolProfilePage> {
   Widget build(BuildContext context) {
     ScreenUtil.init(context, designSize: Size(360, 690), minTextAdapt: true);
 
-    // Determine the number of items per row based on the screen width
     double screenWidth = ScreenUtil().screenWidth;
-    int itemsPerRow = 2; // Default to 2 items per row for smaller devices
+    int itemsPerRow = 2;
 
     if (screenWidth > 600) {
       itemsPerRow = 4; // For medium-sized devices (e.g., tablets)
@@ -47,14 +46,18 @@ class _SchoolProfilePageState extends State<SchoolProfilePage> {
 
         appBar: AppBar(
           centerTitle: false,
+          toolbarHeight: 100.h,
 
           // backgroundColor: Colors.blueAccent.shade400,
           title: Row(
             children: [
-              Image.asset("assets/images/logo-dmhs.png", height: 40.h),
+              Image.asset(
+                "assets/images/logo-dmhs.png",
+                height: 100.h,
+              ),
               Text("DMHS Alumni Association",
                   style: TextStyle(
-                      fontSize: 20.sp,
+                      fontSize: 18.sp,
                       fontStyle: FontStyle.italic,
                       fontWeight: FontWeight.bold)),
             ],

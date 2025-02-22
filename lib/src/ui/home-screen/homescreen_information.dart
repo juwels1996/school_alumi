@@ -1,15 +1,19 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:readmore/readmore.dart';
 
+import '../widgets/responsive_screen.dart';
 import 'components/alumni_schoolarship.dart';
 
 class HomeScreenInformation extends StatelessWidget {
   HomeScreenInformation({super.key});
 
   List<String> imagesList = [
-    'https://media.istockphoto.com/id/530685719/photo/group-of-business-people-standing-in-hall-smiling-and-talking-together.jpg?s=612x612&w=0&k=20&c=jX61UCaRLlN_jm-prBgTqLh6SZkptzlJocO3QDQu3k4=',
-    'https://thumbs.dreamstime.com/b/delegates-networking-conference-drinks-reception-79847575.jpg',
-    'https://media.istockphoto.com/id/513439341/photo/portrait-of-enthusiastic-business-people-in-circle.jpg?s=612x612&w=0&k=20&c=oxwsq8WGFT0ixmSojntYBEZqifne4P7DlqOWbXCqWUk=',
+    'assets/images/photo1.jpg',
+    'assets/images/photo2.jpg',
+    'assets/images/photo3.jpg',
+    'assets/images/photo5.jpg',
   ];
 
   @override
@@ -33,7 +37,8 @@ class HomeScreenInformation extends StatelessWidget {
 
               CarouselSlider(
                 options: CarouselOptions(
-                  height: 500.0,
+                  height: Responsive.carouselHeight(context),
+                  aspectRatio: Responsive.carouselAspectRatio(context),
                   autoPlay: true,
                   autoPlayAnimationDuration: Duration(milliseconds: 800),
                   autoPlayInterval: Duration(seconds: 3),
@@ -43,11 +48,10 @@ class HomeScreenInformation extends StatelessWidget {
                     builder: (BuildContext context) {
                       return Container(
                         width: double.infinity,
-                        height: 500,
                         decoration: BoxDecoration(
                           image: DecorationImage(
-                            image: NetworkImage(
-                                item), // Replace with your image URL
+                            image: AssetImage(
+                                item), // Use AssetImage to load asset images
                             fit: BoxFit.fill,
                           ),
                           borderRadius: BorderRadius.circular(12),
@@ -78,31 +82,31 @@ class HomeScreenInformation extends StatelessWidget {
                 children: [
                   _buildInfoCard(
                     color: Colors.blue.shade800,
-                    title: 'Our History',
+                    title: 'Our History – DMHS Alumni Association',
                     description:
-                        'যুক্তরাষ্ট্রের নবনির্বাচিত প্রেসিডেন্ট ডোনাল্ড ট্রাম্প বলেছে, হোয়াইট হাউস ত্যাগের আগে নিজেকে ক্ষমা না করে সদ্য সাবেক প্রেসিডেন্ট জো বাইডেন ভুল করেছেন। স্থানীয় সময় বুধবার রাতে ফক্স নিউজকে দেওয়া এক সাক্ষাৎকারে ট্রাম্প এই মন্তব্য করেছেন। যুক্তরাষ্ট্রের প্রেসিডেন্ট হিসেবে দ্বিতীয়বার ক্ষমতা গ্রহণের পর কোনো গণমাধ্যমকে দেওয়া এটাই তাঁর প্রথম সাক্ষাৎকার।ফক্স নিউজের উপস্থাপক শন হ্যানিটিকে দেওয়া সাক্ষাৎকারে ট্রাম্প বলেছেন, ‘এই ব্যক্তি (বাইডেন) সবাইকে আগাম ক্ষমা করে গেছেন। মজার বিষয় হলো, সম্ভবত (তাঁর জন্য) দুর্ভাগ্যজনকও, তিনি নিজেকে ক্ষমা করে যাননি।’',
+                        'The DMHS Alumni Association was founded on October 4th, 2024, by a group of determined and resilient young individuals with a shared vision—to create a lifelong network of support, mentorship, and community impact. Their unwavering dedication laid the foundation for an alumni association that thrives on unity, excellence, and giving back.From reconnecting old friends to empowering future generations, our journey is a testament to the strength of the DMHS spirit. More than just an alumni network, we are a living legacy—built on passion, perseverance, and purpose!’',
                     context: context,
                   ),
 
-                  const SizedBox(width: 15),
+                  const SizedBox(width: 8),
 
                   // About Us Section
                   _buildInfoCard(
                     color: Colors.blue.shade500,
                     title: 'About Us',
                     description:
-                        'At Dhaka University Alumni Association, we believe that the journey doesn’t end at graduation; instead, it marks the beginning of an enduring relationship with our alma mater and fellow alumni.',
+                        'The DMHS Alumni Association is more than just a network; it’s a lifelong bond that connects past, present, and future generations of our alma mater. Rooted in tradition and driven by a shared passion for excellence, we strive to foster meaningful connections, support our fellow alumni, and give back to the institution that shaped us. Whether through mentorship, community initiatives, or reunions, we are committed to keeping the spirit of DMHS alive and thriving across the globe. Once a part of DMHS, always a part of its legacy!',
                     context: context,
                   ),
 
-                  const SizedBox(width: 15),
+                  const SizedBox(width: 8),
 
                   // Past Leaders Section
                   _buildInfoCard(
                     color: Colors.green.shade500,
-                    title: 'Past Leaders',
+                    title: 'Past Leaders – DMHS Alumni Association',
                     description:
-                        'Alumni associations play a pivotal role in fostering connections among graduates, maintaining ties with educational institutions, and contributing to the continued success of their alma mater.',
+                        'Great legacies begin with great leaders. On October 4th, 2024, a group of passionate and resilient young minds came together to turn a vision into reality—laying the foundation of the DMHS Alumni Association. Their unwavering dedication, love for our alma mater, and commitment to unity built the strong community we cherish today.As we grow, we honor those who led the way, shaping a future where every DMHS alumnus stays connected, inspired, and empowered. Their legacy lives on in every step we take forward.Once DMHS, Always Family! 💙',
                     context: context,
                   ),
                 ],
@@ -112,7 +116,7 @@ class HomeScreenInformation extends StatelessWidget {
 
               // News Section
               Text(
-                'The Day to Day Activities of Dhaka University Alumni Association',
+                'The Day to Day Activities of DMHS Alumni Association',
                 style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                     color: Colors.white, fontWeight: FontWeight.bold),
               ),
@@ -120,8 +124,6 @@ class HomeScreenInformation extends StatelessWidget {
 
               Row(
                 children: [
-                  SizedBox(width: 16),
-                  _buildNewsCard(context),
                   SizedBox(width: 16),
                   _buildNewsCard(context),
                   SizedBox(width: 16),
@@ -210,37 +212,38 @@ class HomeScreenInformation extends StatelessWidget {
           ),
           child: Padding(
             padding: const EdgeInsets.all(16.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  title,
-                  style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                      color: Colors.white, fontWeight: FontWeight.bold),
-                ),
-                const SizedBox(height: 8),
-                Text(
-                  description,
-                  style: Theme.of(context)
-                      .textTheme
-                      .bodyMedium
-                      ?.copyWith(color: Colors.white),
-                  maxLines: 5,
-                ),
-                const SizedBox(height: 8),
-                TextButton(
-                  onPressed: () {
-                    // Add navigation or additional logic here
-                  },
-                  child: Text(
-                    'Details>>',
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    title,
+                    style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                        color: Colors.white, fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(height: 8),
+                  ReadMoreText(
+                    description,
                     style: Theme.of(context)
                         .textTheme
                         .bodyMedium
                         ?.copyWith(color: Colors.white),
+                    trimLines: 5,
+                    trimMode: TrimMode.Line,
+                    trimCollapsedText: '...Read more',
+                    trimExpandedText: ' Less',
+                    moreStyle: TextStyle(
+                      color: Colors.blue,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    lessStyle: TextStyle(
+                      color: Colors.blue,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-                ),
-              ],
+                  const SizedBox(height: 8),
+                ],
+              ),
             ),
           ),
         ),
@@ -255,7 +258,9 @@ class HomeScreenInformation extends StatelessWidget {
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       child: Container(
         height: MediaQuery.of(context).size.height * 0.25,
-        width: MediaQuery.of(context).size.width * 0.25,
+        width: Responsive.isSmallScreen(context)
+            ? MediaQuery.of(context).size.width * 0.42
+            : MediaQuery.of(context).size.width * 0.5,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
           gradient: LinearGradient(
@@ -270,8 +275,8 @@ class HomeScreenInformation extends StatelessWidget {
             children: [
               ClipRRect(
                 borderRadius: BorderRadius.circular(8),
-                child: Image.network(
-                  "https://media.gettyimages.com/id/1366475343/photo/abstract-program-code-on-the-digital-display.jpg?s=612x612&w=gi&k=20&c=Y8ojtnko01KU70zhHBXmhqqWzD11EznApTd0OHYlFd4=", // Replace with your news image URL
+                child: Image.asset(
+                  "assets/images/photo3.jpg",
                   width: 100,
                   height: 100,
                   fit: BoxFit.cover,
@@ -283,29 +288,43 @@ class HomeScreenInformation extends StatelessWidget {
               ),
               const SizedBox(width: 16),
               Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Event News', // Replace with actual news title
-                      style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          color: Colors.white, fontWeight: FontWeight.bold),
-                    ),
-                    const SizedBox(height: 3),
-                    Text(
-                      'প্রধান উপদেষ্টা অধ্যাপক মুহাম্মদ ইউনূস বলেছেন, ছাত্র–জনতার অভ্যুত্থানে ক্ষমতাচ্যুত শেখ হাসিনা সরকারের সময় দেশের অর্থনীতির উচ্চ প্রবৃদ্ধি নিয়ে যা বলা হতো, তা ছিল ‘জালিয়াতি’। শেখ হাসিনা দাবি করেছিলেন প্রবৃদ্ধিতে সবাইকে ছাড়িয়ে গেছে বাংলাদেশ। হাসিনা সরকারের দুর্নীতি নিয়ে প্রশ্ন না তোলায় আন্তর্জাতিক সম্প্রদায়ের ভূমিকা নিয়েও সমালোচনা করেন তিনি।বৃহস্পতিবার বার্তা সংস্থা রয়টার্সকে দেওয়া সাক্ষাৎকারে অধ্যাপক ইউনূস এসব কথা বলেন। একই সাক্ষাৎকারে তিনি বলেন, নির্বাচনে প্রতিদ্বন্দ্বিতা করার কোনো আগ্রহ তাঁর নেই।Brief description of the news goes here. This could be a short preview or an intro to the full article.',
-                      style: Theme.of(context).textTheme.titleSmall!.copyWith(
-                            fontSize: 12,
-                            color: Colors.white,
-                          ),
-                      maxLines: 6,
-                    ),
-                    const SizedBox(height: 6),
-                    Text("Date : 12/12/2021",
-                        style: Theme.of(context).textTheme.titleSmall!.copyWith(
-                              color: Colors.grey,
-                            )),
-                  ],
+                child: SingleChildScrollView(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Event News', // Replace with actual news title
+                        style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                            color: Colors.white, fontWeight: FontWeight.bold),
+                      ),
+                      const SizedBox(height: 3),
+                      ReadMoreText(
+                        'Our first alumni association meeting was a huge success, with over 100 attendees from across the globe. We shared memories, reconnected with old friends, and discussed exciting plans for the future. Thank you to everyone who joined us for this special event!',
+                        style: Theme.of(context)
+                            .textTheme
+                            .bodySmall
+                            ?.copyWith(color: Colors.white),
+                        trimLines: 3,
+                        trimMode: TrimMode.Line,
+                        trimCollapsedText: '...Read more',
+                        trimExpandedText: ' Less',
+                        moreStyle: TextStyle(
+                          color: Colors.blue,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        lessStyle: TextStyle(
+                          color: Colors.blue,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const SizedBox(height: 6),
+                      Text("Date : 12/12/2021",
+                          style:
+                              Theme.of(context).textTheme.titleSmall!.copyWith(
+                                    color: Colors.grey,
+                                  )),
+                    ],
+                  ),
                 ),
               ),
             ],
