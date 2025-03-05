@@ -10,7 +10,6 @@ class ImageGalleryPage extends StatelessWidget {
       'assets/images/photo1.jpg',
       'assets/images/photo2.jpg',
       'assets/images/photo3.jpg',
-      'assets/images/photo5.jpg',
       // Add more image URLs here
     ];
 

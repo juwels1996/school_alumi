@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import 'package:testing_purpose/src/configuration/dio_config.dart';
 
@@ -13,7 +12,6 @@ class HomeController extends GetxController {
 
   HomeController() : _apiService = ApiService();
 
-
   Future<void> fetchUserData() async {
     isLoading.value = true;
     try {
@@ -21,10 +19,10 @@ class HomeController extends GetxController {
       if (userDetails.userData != null) {
         users.value = userDetails.userData!;
       } else {
-        Fluttertoast.showToast(msg: "No user data found");
+        // Fluttertoast.showToast(msg: "No user data found");
       }
     } catch (e) {
-      Fluttertoast.showToast(msg: "Error fetching user data: $e");
+      // Fluttertoast.showToast(msg: "Error fetching user data: $e");
     } finally {
       isLoading.value = false;
     }
@@ -37,18 +35,14 @@ class HomeController extends GetxController {
       }
 
       final response = await DioConfig().dio.patch(
-        "${updatedUser.id}/",  // Use updatedUser.id here
-        data: updatedUser.toJson(),
-      );
+            "${updatedUser.id}/", // Use updatedUser.id here
+            data: updatedUser.toJson(),
+          );
 
       print("User updated: ${response.data}");
     } catch (e) {
       print("Error updating user: $e");
-      Fluttertoast.showToast(msg: "Failed to update user");
+      // Fluttertoast.showToast(msg: "Failed to update user");
     }
   }
-
-
-
-
 }

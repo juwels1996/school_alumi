@@ -31,13 +31,17 @@ class _SchoolProfilePageState extends State<SchoolProfilePage> {
   Widget build(BuildContext context) {
     ScreenUtil.init(context, designSize: Size(360, 690), minTextAdapt: true);
 
-    double screenWidth = ScreenUtil().screenWidth;
-    int itemsPerRow = 2;
-
-    if (screenWidth > 600) {
-      itemsPerRow = 4; // For medium-sized devices (e.g., tablets)
-    } else if (screenWidth > 1000) {
-      itemsPerRow = 5; // For large devices (e.g., desktop)
+    final double screenWidth = MediaQuery.of(context).size.width;
+    int itemsPerRow;
+    if (screenWidth >= 1000) {
+      // Large screen (e.g., desktop)
+      itemsPerRow = 5;
+    } else if (screenWidth >= 600) {
+      // Medium screen (e.g., tablet)
+      itemsPerRow = 4;
+    } else {
+      // Small screen (e.g., phone)
+      itemsPerRow = 2;
     }
     return DefaultTabController(
       length: 6, // Number of tabs
@@ -101,48 +105,31 @@ class _SchoolProfilePageState extends State<SchoolProfilePage> {
                           colors: [Colors.blueAccent, Colors.orangeAccent],
                         ),
                       ),
-                      child: ListView.builder(
-                        padding: const EdgeInsets.all(16),
-                        itemCount: (_controller.users.length / itemsPerRow)
-                            .ceil(), // Number of rows
-                        itemBuilder: (context, rowIndex) {
-                          int startIndex = rowIndex * itemsPerRow;
-                          int endIndex = (rowIndex + 1) * itemsPerRow;
-
-                          // Create a list of users for this row
-                          List<dynamic> rowUsers = _controller.users.sublist(
-                            startIndex,
-                            endIndex > _controller.users.length
-                                ? _controller.users.length
-                                : endIndex,
-                          );
-
-                          return Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 8.0),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: List.generate(rowUsers.length, (index) {
-                                final user = rowUsers[index];
-                                return Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 4.0),
-                                  child: Container(
-                                    width: (screenWidth -
-                                            32 -
-                                            (itemsPerRow - 1) * 16) /
-                                        itemsPerRow, // Ensure width is same for each card
-                                    child: UserCard(
-                                      user: user,
-                                      onEdit: (updatedUser) {
-                                        _controller.updateUser(updatedUser);
-                                      },
-                                    ),
-                                  ),
-                                );
-                              }),
-                            ),
-                          );
-                        },
+                      // Wrap in Padding if you like
+                      child: Padding(
+                        padding: const EdgeInsets.all(16.0),
+                        child: GridView.builder(
+                          // If you are inside a TabBarView and want the grid to handle scrolling:
+                          // do NOT set shrinkWrap: true or custom physics. Let the GridView scroll normally.
+                          itemCount: _controller.users.length,
+                          gridDelegate:
+                              SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: itemsPerRow, // The # of columns
+                            mainAxisSpacing: 16, // Vertical spacing
+                            crossAxisSpacing: 16, // Horizontal spacing
+                            childAspectRatio:
+                                0.75, // Width/height ratio of each item
+                          ),
+                          itemBuilder: (context, index) {
+                            final user = _controller.users[index];
+                            return UserCard(
+                              user: user,
+                              onEdit: (updatedUser) {
+                                _controller.updateUser(updatedUser);
+                              },
+                            );
+                          },
+                        ),
                       ),
                     ),
 
