@@ -67,7 +67,8 @@ class UserDatum {
   String? sscBatch;
   String? phoneNumber;
   String? designation;
-  bool? isTeacher; // <-- Add this field to mirror 'is_teacher'
+  bool? isTeacher;
+  String? bloodGroup;
   List<Memory>? memories;
 
   UserDatum({
@@ -79,6 +80,7 @@ class UserDatum {
     this.phoneNumber,
     this.designation,
     this.isTeacher,
+    this.bloodGroup,
     this.memories,
   });
 
@@ -91,6 +93,7 @@ class UserDatum {
         profileImage: json["profile_image"],
         address: json["address"],
         isTeacher: json["is_teacher"], // <-- important: read from "is_teacher"
+        bloodGroup: json["blood_group"],
         memories: json["memories"] == null
             ? []
             : List<Memory>.from(

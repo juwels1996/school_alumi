@@ -203,7 +203,7 @@ class HomeScreenInformation extends StatelessWidget {
           height: MediaQuery.of(context).size.height * 0.3,
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              colors: [Colors.purple, Colors.blue],
+              colors: [Colors.purple, Colors.blueGrey, Colors.blue],
               begin: Alignment.bottomLeft,
               end: Alignment.topRight,
             ),
@@ -259,7 +259,7 @@ class HomeScreenInformation extends StatelessWidget {
         height: MediaQuery.of(context).size.height * 0.25,
         width: Responsive.isSmallScreen(context)
             ? MediaQuery.of(context).size.width * 0.42
-            : MediaQuery.of(context).size.width * 0.5,
+            : MediaQuery.of(context).size.width * 0.4,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
           gradient: LinearGradient(

@@ -34,7 +34,7 @@ class UserCard extends StatelessWidget {
       cardHeight = 120;
       usernameFontSize = 14;
       designationFontSize = 12;
-      phoneFontSize = 12;
+      phoneFontSize = 10;
       batchFontSize = 12;
       addressFontSize = 10;
     } else if (isMedium) {
@@ -42,16 +42,16 @@ class UserCard extends StatelessWidget {
       cardHeight = 140;
       usernameFontSize = 16;
       designationFontSize = 14;
-      phoneFontSize = 14;
+      phoneFontSize = 12;
       batchFontSize = 14;
       addressFontSize = 12;
     } else {
       // Large screens
       avatarRadius = 60;
-      cardHeight = 180;
+      cardHeight = 170;
       usernameFontSize = 18;
       designationFontSize = 16;
-      phoneFontSize = 16;
+      phoneFontSize = 14;
       batchFontSize = 14;
       addressFontSize = 12;
     }
@@ -63,7 +63,7 @@ class UserCard extends StatelessWidget {
         height: cardHeight,
         decoration: const BoxDecoration(
           gradient: LinearGradient(
-            colors: [Colors.yellow, Colors.blueAccent],
+            colors: [Colors.blueAccent, Colors.white54],
             begin: Alignment.bottomLeft,
             end: Alignment.topRight,
           ),
@@ -82,7 +82,6 @@ class UserCard extends StatelessWidget {
             Text(
               user.username ?? "",
               style: TextStyle(
-                fontStyle: FontStyle.italic,
                 fontSize: usernameFontSize,
                 fontWeight: FontWeight.bold,
               ),
@@ -91,7 +90,6 @@ class UserCard extends StatelessWidget {
             Text(
               user.designation ?? "",
               style: TextStyle(
-                fontStyle: FontStyle.italic,
                 fontSize: designationFontSize,
                 fontWeight: FontWeight.bold,
               ),
@@ -106,6 +104,16 @@ class UserCard extends StatelessWidget {
               ),
               overflow: TextOverflow.ellipsis,
             ),
+            user.bloodGroup != null
+                ? Text(
+                    "Blood Group: ${user.bloodGroup ?? ""}",
+                    style: TextStyle(
+                      fontStyle: FontStyle.normal,
+                      fontSize: batchFontSize,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  )
+                : Container(),
             Text(
               "Batch: ${user.sscBatch ?? ""}",
               style: TextStyle(
@@ -122,6 +130,8 @@ class UserCard extends StatelessWidget {
                 fontWeight: FontWeight.w400,
               ),
               overflow: TextOverflow.ellipsis,
+              maxLines: 2,
+              textAlign: TextAlign.center,
             ),
           ],
         ),

@@ -22,7 +22,10 @@ class ContactUsPage extends StatelessWidget {
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: [Colors.deepPurple, Colors.orangeAccent],
+            colors: [
+              Colors.deepPurple,
+              Colors.brown,
+            ],
           ),
         ),
         child: Padding(
